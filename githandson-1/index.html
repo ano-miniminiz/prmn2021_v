@@ -1,0 +1,65 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>GitHubを使いたい！</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="githandson-1"
+                  title="GitHubを使いたい！"
+                  environment="web"
+                  feedback-link="https://github.com/ano-miniminiz/prmn2021_vsc">
+    
+      <google-codelab-step label="はじめに" duration="0">
+        <p> 課題の進捗を確認・共有するために、GitHubというサービスを使用します。 (GitHubについてはググってください)  構造がややこしいため使い慣れるまで少し難しく感じるかもしれませんが、コマンドを数個覚えれば、なんとか使えます。<a href="https://www.slideshare.net/ihcomega/git-57454868" target="_blank">Gitはじめの一歩</a>を覗いてみるのもアリです。  ただ、少し前にニュースになったように、正しく設定をして使わないと、他人に見られるべきではない情報が大公開されてしまいますので、お気をつけください。   </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Gitインストール(Windowsのみ)" duration="0">
+        <p>Positive </p>
+<p>インストールまでの各項目に書かれていることを確認したい場合は<a href="https://www.curict.com/item/60/60bfe0e.html" target="_blank">こちら</a>を参考にしてください。  <a href="https://gitforwindows.org/" target="_blank">https://gitforwindows.org/</a> にアクセスする  <img alt="git for windows" src="img\d157915448cff45b.png"> &#34;Download&#34;をクリックしてGitをインストールする  <br>  <img alt="explorer" src="img\c21cff24ab4d99f3.png"> エクスプローラを開き、ダウンロードしたインストーラ(.exe)を起動する  <br>  <img alt="Information" src="img\9968dd23037f6b0e.png"> [Next]をクリック  <br>  <img alt="Select Components" src="img\1c57d33520a34f57.png"> 画像と同じ項目にチェックが入っていることを確認して[Next]  <br>  <img alt="Choosing the default editor used by Git" src="img\43d2cbd9e6a392b3.png"> デフォルトのまま[Next]  <br>  <img alt="Adjusting the name of the initial branch in new repositories" src="img\4a5f7b9e78ca64d9.png"> Let Git decide を選択して[Next]  <br>  <img alt="Adjusting your PATH environment" src="img\fd9a78d9212496a5.png"> 2つ目のGit from the ~を選択して[Next]  <br>  <img alt="Choosing HTTPS transport backend" src="img\49e67b085b304609.png"> Use the OpenSSL libraryを選択して[Next]  <br>  <img alt="Configuring the line ending conversions" src="img\3de09e729c45685b.png"> 3つ目にチェックを入れて[Next]  <br>  <img alt="Configuring the terminal emulator to use with Git Bash" src="img\43672209097cc7d5.png"> Use MinTTYを選択して[Next]  <br>  <img alt="Choose the default behavior of git pull" src="img\fbfc57e823caf6c3.png"> Defaultを選択して[Next]  <br>  <img alt="Choose a credential helper" src="img\caf51996319e4bc4.png"> Git Credential Manager Coreを選択して[Next]  <br>  <img alt="Configuring extra options" src="img\ddc7c4658978b03f.png"> デフォルトのまま[Next]  <br>  <img alt="Configuring experimental options" src="img\d46c14f612f2b756.png"> 何も選択せずに[Install]  <br>  <img alt="Installing" src="img\3dd79362e55601e9.png"> 割とすぐ終わります  <br>  <img alt="Completing the Git Setup Wizard" src="img\5dfe3ba6eac8d779.png"> インストールが終わったら、[finish]をクリックして閉じる  <br><br>  </p>
+<h2 is-upgraded>コマンドプロンプトを起動して、Gitがインストールされていることを確認します </h2>
+<p><code>git --version</code>と打ってEnter  <img alt="Comand prompt" src="img\1ff6d6dcff217fec.png"> バージョンが表示されたらOKです   </p>
+<p>リモートリポジトリの作成 </p>
+<p> GitHubのアカウントは作成済みという前提で説明していきます (まだの方は<a href="https://github.com/" target="_blank">こちら</a>からどうぞ)  まずはリモートリポジトリ(GitHub上での管理フォルダ的なもの)を作成します  <img alt="New" src="img\811923945921c999.png"> Repositoriesに移動して、右上の[New]をクリック  <br>  以下のような画面が出てくるはずです。 <img alt="Create a new repository" src="img\5447cfe313764b95.png"> ・Owner:自分のユーザ名  ・Repository name:リモートリポジトリの名前(図では<code>git-test</code>)  ・Public/Private:リポジトリの公開範囲(適宜)  ・Add系:必要に応じてチェック、後で追加できます  それぞれ設定が終わったら、[Create repository]をクリックしてリポジトリを作成します  <br>  <img alt="Create a new repository" src="img\657dbc85d15bee9a.png"> 後ほど使うのでこのページは開いておくことをおすすめします   </p>
+<p>ローカルリポジトリの作成 </p>
+<p> お次はローカルリポジトリを作成します   </p>
+<p>/ss22.png) 後ほど使うのでこのページは開いておくことをおすすめします   </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="ローカルリポジトリの作成" duration="0">
+        <p> お次はローカルリポジトリを作成します   </p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

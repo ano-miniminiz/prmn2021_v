@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-05-22T20:27:33+09:00",
+  "id": "githandson-1",
+  "duration": 0,
+  "title": "GitHubを使いたい！",
+  "summary": "GitHubを使うための準備",
+  "source": "git_handson.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/ano-miniminiz/prmn2021_vsc",
+  "url": "githandson-1"
+}
